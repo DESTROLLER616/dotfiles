@@ -1,0 +1,51 @@
+theme = dark:GitHub Dark Colorblind, light:Iceberg Light
+
+cursor-style = block_hollow
+cursor-color = #a410e3
+cursor-style-blink = true
+
+font-family = JetBrains Mono NL
+font-size = 12
+font-feature = "liga"
+font-feature = "calt"
+
+background-blur = true
+background-blur-radius = 20
+background-opacity = 0.9
+
+split-divider-color = #0d5ad6
+
+# Window options
+window-theme = ghostty
+window-decoration = false
+window-padding-x = 15
+window-padding-y = 15
+
+# --- Divisiones de pantalla (Splits) ---
+# Dividir a la derecha
+keybind = ctrl+shift+d=new_split:right
+# Dividir abajo
+keybind = ctrl+shift+s=new_split:down
+
+# --- Navegación entre divisiones ---
+keybind = ctrl+shift+left=goto_split:left
+keybind = ctrl+shift+right=goto_split:right
+keybind = ctrl+shift+up=goto_split:up
+keybind = ctrl+shift+down=goto_split:down
+
+# --- Extras útiles ---
+# Cerrar la división actual (sin cerrar toda la terminal)
+keybind = ctrl+shift+w=close_surface
+# Maximizar/Minimizar la división actual (Zoom)
+keybind = ctrl+shift+z=toggle_split_zoom
+
+# --- Gestión de Ventanas ---
+# Crear una ventana nueva independiente
+keybind = ctrl+shift+n=new_window
+
+# --- Gestión de Pestañas (Tabs) ---
+# Si prefieres pestañas en lugar de ventanas separadas
+keybind = ctrl+shift+t=new_tab
+# Para moverte entre pestañas
+keybind = ctrl+shift+j=previous_tab
+keybind = ctrl+shift+k=next_tab

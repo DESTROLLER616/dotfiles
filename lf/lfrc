@@ -1,0 +1,62 @@
+set shellopts ""
+set shell /bin/sh
+
+# Configuración básica
+set preview true
+set drawbox true
+set icons true
+
+set previewer ~/.config/lf/pv.sh
+set cleaner ~/.config/lf/clean.sh
+
+# Navegación estilo Vim
+map i $less $f
+
+# =========================================================
+# MAPEOS DE TECLAS (CONTROLES)
+# =========================================================
+
+# Definición de comandos (fíjate en el espacio después del %)
+# Cambia tus mapeos de la 'b' por estos:
+map bp ${{ printf "%s" "$f" | wl-copy }}
+map bd ${{ pwd | wl-copy }}
+
+# Navegación rápida
+map gh cd ~
+map gd cd ~/Downloads
+map gc cd ~/.config
+
+# Operaciones de archivo
+map r push :rename<enter>
+map n push :new-file<enter>
+map M push :mkdir<enter>
+
+# --- Borrado Directo (¡PELIGRO: Permanente!) ---
+# Borrado permanente (Peligroso)
+map X $rm -rf $fx
+
+# Borrado seguro (Papelera)
+cmd trash %trash-put $fx
+map d trash
+map <delete> trash
+map <delete2> trash
+
+# Configurar el comando para abrir archivos
+# Si es un directorio, entra. Si es un archivo, usa el editor.
+
+cmd open $index -d "$f" && lf -remote "send $id cd \"$f\"" || lf -remote "send $id $editor \"$f\""
+
+# Cambiar el mapeo de la tecla 'l' y 'Enter' para que usen nuestro comando 'open'
+map l open
+map <enter> open
+
+# =========================================================
+# COMANDOS PERSONALIZADOS
+# =========================================================
+
+# Crear archivo nuevo (comando interno)
+cmd new-file %printf "Nombre del archivo: "; read name; touch "$name"
+
+# Crear carpeta nueva (comando interno)
+cmd mkdir %printf "Nombre de la carpeta: "; read name; mkdir "$name"
+
