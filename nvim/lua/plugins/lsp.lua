@@ -1,7 +1,7 @@
 require("mason").setup()
 
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "marksman", "astro", "vue_ls", "ts_ls" },
+	ensure_installed = { "lua_ls", "marksman", "astro", "vue_ls", "ts_ls", "tailwindcss" },
 })
 vim.lsp.config("lua_ls", {
 	settings = {
@@ -21,12 +21,14 @@ vim.lsp.config("vue_ls", {
 		},
 	},
 })
+vim.lsp.config("tailwindcss", {})
 
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("marksman")
 vim.lsp.enable("astro")
 vim.lsp.enable("ts_ls")
 vim.lsp.enable("vue_ls")
+vim.lsp.enable("tailwindcss")
 
 -- Import capabilities to add autocomplete in code
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -37,3 +39,4 @@ vim.lsp.config("vue_ls", {
 	capabilities = capabilities,
 	init_options = { vue = { hybridMode = false } },
 })
+vim.lsp.config("tailwindcss", { capabilities = capabilities })
