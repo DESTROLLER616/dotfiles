@@ -14,34 +14,21 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	end
 end
 vim.opt.rtp:prepend(lazypath)
+
+-- Import Lazy plugins
+local copilot = require("plugins.imports.copilot")
+local lsp = require("plugins.imports.lsp")
+local ui = require("plugins.imports.ui")
+local utils = require("plugins.imports.utils")
+
 -- Setup lazy.nvim
 require("lazy").setup({
 	spec = {
 		-- import your plugins
-		{ "nvim-tree/nvim-tree.lua", dependencies = "nvim-tree/nvim-web-devicons" },
-		{ "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
-		{ "hrsh7th/nvim-cmp" },
-		{ "hrsh7th/cmp-nvim-lsp" }, -- Fuente para que cmp lea del LSP
-		{ "L3MON4D3/LuaSnip" }, -- Motor de snippets (obligatorio para cmp)
-		{ "saadparwaiz1/cmp_luasnip" },
-		{ "neovim/nvim-lspconfig" },
-		{ "williamboman/mason.nvim" },
-		{ "williamboman/mason-lspconfig.nvim" },
-		{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
-		{ "windwp/nvim-autopairs", event = "InsertEnter", config = true },
-		{ "nvim-telescope/telescope.nvim", tag = "0.1.5", dependencies = { "nvim-lua/plenary.nvim" } },
-		{ "stevearc/conform.nvim", opts = {} },
-		{
-			"akinsho/bufferline.nvim",
-			version = "*",
-			dependencies = "nvim-tree/nvim-web-devicons",
-			opts = {
-				options = {
-					numbers = "ordinal",
-					diagnostics = "nvim-lsp",
-				},
-			},
-		},
+		utils,
+		ui,
+		lsp,
+		copilot,
 	},
 	-- Configure any other settings here. See the documentation for more details.
 	-- colorscheme that will be used when installing plugins.
