@@ -2,3 +2,6 @@
 !lf/
 !ghostty/
 !.gitignore
+
+# Ignore specific files and directories
+btop/btop.log

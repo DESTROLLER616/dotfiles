@@ -1,0 +1,61 @@
+{
+      "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+      "logo": {
+          "type": "kitty",
+          "source": "/home/destroller/.config/fastfetch/logo_pop_os.png",
+          "width": 35
+      },
+    "modules": [
+        {
+            "type": "title",
+            "format": "Hello {user-name}",
+            "keyColor": "light_magenta"
+        },
+        {
+            "type": "separator",
+            "string": "",
+            "color": "dim_white"
+        },
+        {
+            "type": "os",
+            "key": "󰘚 Sístema",
+            "keyColor": "light_cyan"
+        },
+        {
+            "type": "kernel",
+            "key": " Núcleo",
+            "keyColor": "light_blue"
+        },
+        {
+            "type": "shell",
+            "key": " Shell",
+            "keyColor": "light_yellow"
+        },
+        {
+            "type": "terminal",
+            "key": " Consola",
+            "keyColor": "light_green"
+        },
+        {
+            "type": "memory",
+            "key": "󰍛 Ram",
+            "keyColor": "light_magenta"
+        },
+        {
+            "type": "disk",
+            "key": "󰨣 Disk",
+            "keyColor": "light_red"
+        },
+        {
+            "type": "theme",
+            "key": " Theme",
+            "keyColor": "light_cyan"
+        },
+        "locale",
+        "break", // Deja una línea en blanco antes de los bloques de colores
+        {
+            "type": "colors",
+            "symbol": "circle",
+        }
+      ]
+}
