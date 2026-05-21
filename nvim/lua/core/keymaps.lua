@@ -1,8 +1,5 @@
 local map = vim.keymap.set
 
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 -- Code necessary to add controls to error lens in code
 map("n", "gl", vim.diagnostic.open_float)
 map("n", "[d", vim.diagnostic.goto_prev)

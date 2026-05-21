@@ -15,24 +15,11 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Import Lazy plugins
-local copilot = require("plugins.imports.copilot")
-local lsp = require("plugins.imports.lsp")
-local ui = require("plugins.imports.ui")
-local utils = require("plugins.imports.utils")
-
--- Setup lazy.nvim
+-- Setup of Lazy to import all plugins
 require("lazy").setup({
 	spec = {
-		-- import your plugins
-		utils,
-		ui,
-		lsp,
-		copilot,
+		{ import = "plugins" },
 	},
-	-- Configure any other settings here. See the documentation for more details.
-	-- colorscheme that will be used when installing plugins.
-	install = { colorscheme = { "habamax" } },
-	-- automatically check for plugin updates
+	install = { colorscheme = { "catppuccin" } },
 	checker = { enabled = true },
 })

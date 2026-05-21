@@ -3,7 +3,7 @@
       "logo": {
           "type": "kitty",
           "source": "/home/destroller/.config/fastfetch/logo_pop_os.png",
-          "width": 35
+          "width": 30
       },
     "modules": [
         {
@@ -18,12 +18,12 @@
         },
         {
             "type": "os",
-            "key": "󰘚 Sístema",
+            "key": "󰘚 System",
             "keyColor": "light_cyan"
         },
         {
             "type": "kernel",
-            "key": " Núcleo",
+            "key": " Core",
             "keyColor": "light_blue"
         },
         {
@@ -33,8 +33,18 @@
         },
         {
             "type": "terminal",
-            "key": " Consola",
+            "key": " Terminal",
             "keyColor": "light_green"
+        },
+        {
+            "type": "separator",
+            "string": "",
+            "color": "dim_white"
+        },
+        {
+            "type": "cpu",
+            "key": " CPU",
+            "keyColor": "light_magenta"
         },
         {
             "type": "memory",
@@ -47,15 +57,29 @@
             "keyColor": "light_red"
         },
         {
-            "type": "theme",
-            "key": " Theme",
-            "keyColor": "light_cyan"
+            "type": "battery",
+            "key": "  Battery",
+            "keyColor": "light_green"
         },
-        "locale",
+        {
+            "type": "separator",
+            "string": "",
+            "color": "dim_white"
+        },
+        {
+            "type": "localip",
+            "key": "  Local IP",
+            "keyColor": "light_blue"
+        },
+        {
+            "type": "publicip",
+            "key": "  Public IP",
+            "keyColor": "bright_blue"
+        },
         "break", // Deja una línea en blanco antes de los bloques de colores
         {
             "type": "colors",
-            "symbol": "circle",
+            "symbol": "circle"
         }
       ]
 }
