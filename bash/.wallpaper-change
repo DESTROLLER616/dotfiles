@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# 📁 Ruta exacta al archivo 'all' que me mostraste en tu captura
+CONFIG_FILE="/home/destroller/.config/cosmic/com.system76.CosmicBackground/v1/all"
+
+# 🖼️ Rutas completas a tus imágenes personales
+WALLPAPER_DIA="/home/destroller/.config/wallpapers/light_wallpaper.png"
+WALLPAPER_NOCHE="/home/destroller/.config/wallpapers/night_wallpaper.png"
+
+# Obtener la hora actual (formato 24h)
+HORA=$(date +%H)
+
+# Verificar si el archivo 'all' de COSMIC existe antes de operar
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "Error: No se encuentra el archivo de configuración en la ruta indicada."
+    exit 1
+fi
+
+# Decidir qué fondo corresponde según el horario
+if [ "$HORA" -ge 6 ] && [ "$HORA" -lt 19 ]; then
+    NUEVO_FONDO="$WALLPAPER_DIA"
+else
+    NUEVO_FONDO="$WALLPAPER_NOCHE"
+fi
+
+# 🧙‍♂️ Reemplazo quirúrgico respetando el formato original de Rust / RON
+# Busca la línea que empiece con 'source: Path' y la cambia por la nueva ruta estructurada
+sed -i 's|source: Path("[^"]*")|source: Path("'"$NUEVO_FONDO"'")|g' "$CONFIG_FILE"

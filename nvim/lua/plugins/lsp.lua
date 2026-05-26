@@ -8,6 +8,7 @@ return {
 	config = function()
 		-- Init Mason to download executables in a visual window
 		require("mason").setup()
+		local mason_registry = require("mason-registry")
 
 		-- Capacity to autocomplete
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
@@ -16,10 +17,20 @@ return {
 		local vue_plugin_path = require("mason-registry").get_package("vue-language-server"):get_install_path()
 			.. "/node_modules/@vue/language-server"
 
+		local ts_path = mason_registry.get_package("typescript-language-server"):get_install_path()
+			.. "/node_modules/typescript/lib"
+
 		-- Config lsp servers and their behavior
 		vim.lsp.config("lua_ls", { settings = { Lua = { diagnostics = { globals = { "vim" } } } } })
 		vim.lsp.config("marksman", {})
-		vim.lsp.config("astro", { capabilities = capabilities })
+		vim.lsp.config(
+			"astro",
+			{ capabilities = capabilities, init_options = {
+				typescript = {
+					tsdk = ts_path,
+				},
+			} }
+		)
 		vim.lsp.config("tailwindcss", { capabilities = capabilities })
 		vim.lsp.config("rust_analyzer", { capabilities = capabilities })
 		vim.lsp.config("ts_ls", {
@@ -45,6 +56,9 @@ return {
 			},
 			filetypes = { "vue" },
 		})
+		vim.lsp.config("pyright", {
+			capabilities = capabilities,
+		})
 
 		-- Weak up servers
 		vim.lsp.enable("lua_ls")
@@ -54,5 +68,6 @@ return {
 		vim.lsp.enable("vue_ls")
 		vim.lsp.enable("tailwindcss")
 		vim.lsp.enable("rust_analyzer")
+		vim.lsp.enable("pyright")
 	end,
 }

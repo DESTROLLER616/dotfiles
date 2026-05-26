@@ -1,0 +1,9 @@
+[mgr]
+show_hidden = true
+linemode = "size"
+
+[preview]
+wrap = "yes"
+
+[flavor]
+dark = "neon"
