@@ -7,3 +7,12 @@ wrap = "yes"
 
 [flavor]
 dark = "neon"
+
+[opener]
+edit = [
+    { run = 'nvim "$@"', block = true, desc = "Neovim" }
+]
+
+[[open.prepend_rules]]
+url = "*.{txt,md,toml,yaml,yml,json,conf,sh,py,js,ts,lua}"
+use = "edit"
