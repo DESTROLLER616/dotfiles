@@ -4,13 +4,13 @@ return {
 	event = "VeryLazy",
 	config = function()
 		require("mini.animate").setup({
-			-- Animación suave al mover el cursor
+			-- Smooth scroll animation
 			cursor = { enable = true },
-			-- Animación al hacer scroll (subir/bajar)
+			-- Animation when scrolling
 			scroll = { enable = true },
-			-- Animación al abrir o cerrar ventanas divididas
+			-- Animation when opening or closing split windows
 			window = { enable = true },
-			-- Animación al redimensionar ventanas
+			-- Animation when resizing windows
 			resize = { enable = true },
 		})
 	end,

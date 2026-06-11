@@ -22,14 +22,13 @@ return {
 				modified_icon = "●",
 				close_icon = "",
 
-				-- INTEGRACIÓN CON NVIM-TREE
 				offsets = {
 					{
 						filetype = "NvimTree",
 						text = "File explorer",
 						text_align = "center",
-						separator = true, -- Línea divisoria vertical para el fondo transparente
-						highlight = "NvimTreeNormal", -- Fuerza a bufferline a usar la transparencia de nvim-tree
+						separator = true,
+						highlight = "NvimTreeNormal",
 					},
 				},
 

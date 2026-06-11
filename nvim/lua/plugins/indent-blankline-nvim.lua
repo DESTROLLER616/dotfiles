@@ -3,7 +3,6 @@ return {
 	main = "ibl",
 	event = { "BufReadPost", "BufNewFile" },
 	config = function()
-		-- Definición limpia de colores personalizados directo en Neovim
 		vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
 		vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
 		vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
@@ -24,7 +23,7 @@ return {
 					"RainbowCyan",
 				},
 			},
-			scope = { enabled = true }, -- El bloque de código actual brilla más
+			scope = { enabled = true },
 		})
 	end,
 }

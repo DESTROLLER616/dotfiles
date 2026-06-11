@@ -1,0 +1,16 @@
+# Add nvm to patn
+export NVM_DIR="$HOME/.nvm"
+
+# Add file path to nvim AppImage
+export EDITOR="$HOME/.local/bin/nvim"
+export VISUAL="$HOME/.local/bin/nvim"
+
+# pnpm
+export PNPM_HOME="/home/destroller/.local/share/pnpm"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Path to starship config
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
