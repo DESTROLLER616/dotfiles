@@ -1,0 +1,13 @@
+[username]
+show_always = true
+format = "[$user]($style)"
+style_user = "bg:#9a7ecc fg:#1e1e2e bold"
+
+[directory]
+style = "bg:#313244 fg:#cdd6f4 bold"
+format = "[$path]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[character] 
+success_symbol = '[➜](bold green)'

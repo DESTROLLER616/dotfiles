@@ -22,5 +22,11 @@ map("t", "<Esc>", [[<C-\><C-n>]], { desc = "Get out to terminal mode" })
 map("n", "<A-h>", "<cmd>BufferLineMovePrev<cr>", { desc = "Move tab to the left" })
 map("n", "<A-l>", "<cmd>BufferLineMoveNext<cr>", { desc = "Move tab to the right" })
 
+-- Set command to open/close file explorer
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { silent = true, desc = "Toggle File Explorer" })
+
+-- Set command to focus on file explorer
+vim.keymap.set("n", "<leader>f", ":NvimTreeFocus<CR>", { silent = true, desc = "Focus File Explorer" })
+
 local builtin = require("telescope.builtin")
 map("n", "<leader>ff", builtin.find_files, {})
